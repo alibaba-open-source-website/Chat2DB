@@ -6,6 +6,8 @@ description: Chat2DB一个集成了AI能力的、支持Mysql、Oracle等多种�
 
 ## 功能一：自然语言生成SQL
 首先建好测试需要用的表，这里用到了4张表做测试。大家也可以建自己的表做测试。
+
+学生信息表：
 ```sql
 CREATE TABLE student (
   id INT PRIMARY KEY AUTO_INCREMENT COMMENT '学生ID',
@@ -15,16 +17,16 @@ CREATE TABLE student (
   address VARCHAR(100) NOT NULL COMMENT '学生住址',
   phone VARCHAR(20) NOT NULL COMMENT '学生联系方式'
 ) COMMENT '学生信息表';
-科目表：
 
+科目表：
 CREATE TABLE course (
   id INT PRIMARY KEY AUTO_INCREMENT COMMENT '科目ID',
   name VARCHAR(50) NOT NULL COMMENT '科目名称',
   teacher VARCHAR(50) NOT NULL COMMENT '授课教师',
   credit INT NOT NULL COMMENT '科目学分'
 ) COMMENT '科目表';
-学生选修科目表：
 
+学生选修科目表：
 CREATE TABLE student_course (
   id INT PRIMARY KEY AUTO_INCREMENT COMMENT '关系ID',
   student_id INT NOT NULL COMMENT '学生ID',
@@ -32,8 +34,8 @@ CREATE TABLE student_course (
   FOREIGN KEY (student_id) REFERENCES student(id),
   FOREIGN KEY (course_id) REFERENCES course(id)
 ) COMMENT '学生选修科目表';
-学生成绩表：
 
+学生成绩表：
 CREATE TABLE score (
   id INT PRIMARY KEY AUTO_INCREMENT COMMENT '成绩ID',
   student_id INT NOT NULL COMMENT '学生ID',
