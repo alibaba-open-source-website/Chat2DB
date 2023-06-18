@@ -5,7 +5,7 @@ description: Chat2DB一个集成了AI能力的、支持Mysql、Oracle等多种�
 ---
 
 ## 功能四：SQL转换
-不同数据库SQL预发间有略微的差异，我们也可以通过Chat2DB让他帮我们去转换这个SQL的语法。
+不同数据库SQL语法间有略微的差异，我们也可以通过Chat2DB让他帮我们去转换这个SQL的语法。
 比如将如下的分页从Mysql语法转换成Oracle的语法。
 
 ```sql
